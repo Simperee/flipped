@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "flipped",
+    "name": "Simpery's Auto-Flipper",
+    "description": "xd",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Simpery"
+    ],
+    "credits": "Cephetir",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
