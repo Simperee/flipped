@@ -48,7 +48,7 @@ object Config : Vigilant(File(mc.mcDataDir, "config/Flipped/config.toml"), "Simp
 
     @Property(
         type = PropertyType.SWITCH,
-        name = "Test chest check",
+        name = "chest check",
         category = "Testing",
         subcategory = "Bazaar",
         description = "Test command"
