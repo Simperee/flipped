@@ -1,9 +1,10 @@
-package com.simpery.flipped
+package com.simpery.flipped.commands
 
 import gg.essential.api.commands.Command
 import gg.essential.api.commands.DefaultHandler
 import gg.essential.api.commands.SubCommand
 import com.simpery.flipped.config.Config
+import com.simpery.flipped.utils.ModUtils
 import gg.essential.api.EssentialAPI
 
 object FlippedCommand : Command("flipped") {
@@ -15,7 +16,7 @@ object FlippedCommand : Command("flipped") {
     }
 
     @SubCommand("sub")
-    fun sub() {
-        Config
+    fun talk(text: String) {
+        ModUtils.sendMsg(text)
     }
 }

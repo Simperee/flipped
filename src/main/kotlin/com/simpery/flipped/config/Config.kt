@@ -36,4 +36,22 @@ object Config : Vigilant(File(mc.mcDataDir, "config/Flipped/config.toml"), "Simp
         subcategory = "API"
     )
     var toggle = false
+
+    @Property(
+        type = PropertyType.SWITCH,
+        name = "test command",
+        category = "Testing",
+        subcategory = "Bazaar",
+        description = "Test command"
+    )
+    var testToggle = false
+
+    @Property(
+        type = PropertyType.SWITCH,
+        name = "Test chest check",
+        category = "Testing",
+        subcategory = "Bazaar",
+        description = "Test command"
+    )
+    var chesthackToggle = false
 }

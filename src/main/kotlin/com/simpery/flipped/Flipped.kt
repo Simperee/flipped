@@ -1,13 +1,17 @@
 package com.simpery.flipped
 
+import com.simpery.flipped.commands.FlippedCommand
 import com.simpery.flipped.config.Config
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
+import net.minecraftforge.fml.client.registry.ClientRegistry
+import net.minecraft.client.settings.KeyBinding
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
-import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
+import com.simpery.flipped.features.Features
+import org.lwjgl.input.Keyboard
 
 @Mod(
     modid = "flipped",
@@ -19,6 +23,8 @@ import org.apache.logging.log4j.Logger
 )
 object Flipped {
     private val logger: Logger = LogManager.getLogger("Flipped")
+    val testKey = KeyBinding("Better Bazaar", Keyboard.KEY_NONE, "Flipped")
+    val chestKey = KeyBinding("Chest Check", Keyboard.KEY_NONE, "Flipped")
 
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
@@ -26,7 +32,10 @@ object Flipped {
 
         Config.init()
         FlippedCommand.register()
+        Features.register()
         MinecraftForge.EVENT_BUS.register(this)
+        ClientRegistry.registerKeyBinding(testKey)
+        ClientRegistry.registerKeyBinding(chestKey)
     }
 
 }
